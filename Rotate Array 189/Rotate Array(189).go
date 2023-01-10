@@ -51,3 +51,10 @@ func recursion(nums []int, k int, lNums int) {
 		nums[i] = value
 	}
 }
+
+//альтернатива
+//import "fmt"
+//func rotate(nums []int, k int)  {
+//	m := k % len(nums)
+//	copy(nums, append(nums[len(nums)-m:],nums[:len(nums)-m]...))
+//}
