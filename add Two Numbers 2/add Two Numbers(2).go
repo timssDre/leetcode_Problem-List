@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"math/big"
 	"strconv"
 	"unicode/utf8"
 )
@@ -59,37 +60,23 @@ func recursion(answer *ListNode, i *int, strCal string) {
 	}
 }
 
+func BigIntToHexStr(bigInt *big.Int) string {
+	return fmt.Sprintf("0x%x", bigInt)
+}
+
 func sumPointValue(l *ListNode, i *string) int {
 	*i = strconv.Itoa(l.Val) + *i
 	empty := checkNext(l)
 	if empty == true {
 
-		answer, _ := strconv.ParseInt(*i, 10, 64)
-		//answer, err := strconv.Atoi(*i)
-		//if err != nil {
-		//	log.Println(err)
-		//}
-		//strs := strings.Split(*i, ",")
-		//var answer []float64
-		//for _, s := range strs {
-		//	num, err := strconv.ParseFloat(s) //Atoi(s)
-		//	if err == nil {
-		//		answer = append(answer, num)
-		//	}
-		//}
-		fmt.Println(answer)
-		return 1
+		answer, err := strconv.Atoi(*i)
+		if err != nil {
+			log.Println(err)
+		}
+		return answer
 	} else {
 		return sumPointValue(l.Next, i)
 	}
-}
-
-func Pow(a, b int) int {
-	result := 1
-	for i := 0; i < b; i++ {
-		result *= a
-	}
-	return result
 }
 
 func checkNext(l *ListNode) bool {
