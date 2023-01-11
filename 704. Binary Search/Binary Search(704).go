@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 //Example 1:
 //
 //Input: nums = [-1,0,3,5,9,12], target = 9
@@ -12,8 +16,15 @@ package main
 //Explanation: 2 does not exist in nums so return -1
 func main() {
 	var nums = []int{-1, 0, 3, 5, 9, 12}
-	output := 4
-	search(nums, output)
+	//var nums = []int{5}
+	output := -5
+	//var nums = []int{-1, 0, 5}
+	//output := 0
+	//var nums = []int{-1, 0, 3, 5, 9, 12}
+	//output := 2
+
+	answer := search(nums, output)
+	fmt.Println(answer)
 }
 
 func search(nums []int, target int) int {
