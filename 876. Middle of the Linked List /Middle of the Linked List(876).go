@@ -33,11 +33,24 @@ func middleNode(head *ListNode) *ListNode {
 		max int
 	)
 	a := size(head, j)
+<<<<<<< HEAD
 
 	answer := ListNode{}
 	min = len(a) / 2
 	max = len(a) - 1
 
+=======
+	b := check(len(a))
+
+	answer := ListNode{}
+	if b == false {
+		min = len(a) / 2
+		max = len(a) - 1
+	} else {
+		min = len(a) / 2
+		max = len(a) - 1
+	}
+>>>>>>> origin/main
 	reqAnswer(a, &answer, min, max)
 
 	return &answer
@@ -52,6 +65,16 @@ func reqAnswer(a []int, answer *ListNode, min int, max int) {
 	}
 }
 
+<<<<<<< HEAD
+=======
+func check(n int) bool {
+	if n < 2 {
+		return n%2 == 0
+	}
+	return check(n - 2)
+}
+
+>>>>>>> origin/main
 func size(head *ListNode, j []int) []int {
 	j = append(j, head.Val)
 	if nil != head.Next {
