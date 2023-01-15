@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"math/big"
 	"strconv"
 	"unicode/utf8"
 )
@@ -58,10 +57,6 @@ func recursion(answer *ListNode, i *int, strCal string) {
 		answer.Next = &ListNode{}
 		recursion(answer.Next, i, strCal)
 	}
-}
-
-func BigIntToHexStr(bigInt *big.Int) string {
-	return fmt.Sprintf("0x%x", bigInt)
 }
 
 func sumPointValue(l *ListNode, i *string) int {
