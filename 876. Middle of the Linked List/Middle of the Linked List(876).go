@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -15,8 +19,8 @@ func main() {
 	//		Next: nil,
 	//	},
 	//}
-	middleNode(&ln)
-
+	answer := middleNode(&ln)
+	fmt.Println(answer)
 }
 
 /**
