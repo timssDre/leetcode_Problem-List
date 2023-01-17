@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -39,7 +41,7 @@ func middleNode(head *ListNode) *ListNode {
 	max = len(a) - 1
 
 	reqAnswer(a, &answer, min, max)
-
+	fmt.Println(1)
 	return &answer
 }
 
